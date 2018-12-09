@@ -1,4 +1,4 @@
-<span style="color:red">This is inspired and partially stolen from [https://github.com/Parth/dotfiles](https://github.com/Parth/dotfiles)</span>
+##<span style="color:red">This is inspired and partially stolen from [https://github.com/Parth/dotfiles](https://github.com/Parth/dotfiles)</span>
 # Awesome Dotfiles
 
 Simple, but extensive customization of ZSH, TMUX, and Vim. 
