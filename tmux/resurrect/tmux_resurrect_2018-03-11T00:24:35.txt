@@ -1,0 +1,5 @@
+pane	0	1	:~	1	:*	0	:/home/shane	0	zsh	:
+pane	0	1	:~	1	:*	1	:/home/shane	0	zsh	:
+pane	0	1	:~	1	:*	2	:/home/shane	1	zsh	:
+window	0	1	1	:*	0e0a,211x57,0,0[211x28,0,0,0,211x28,0,29{105x28,0,29,1,105x28,106,29,2}]
+state	0	

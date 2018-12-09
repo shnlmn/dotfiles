@@ -1,0 +1,8 @@
+pane	0	1	:~/test	0	:-	0	:/home/shane/test	1	zsh	:
+pane	0	1	:~/test	0	:-	1	:/home/shane	0	zsh	:
+pane	0	1	:~/test	0	:-	2	:/home/shane/test	0	vim	:vim asyncio_server2.py
+pane	0	1	:~/test	0	:-	3	:/home/shane/test	0	vim	:vim asyncio_client.py
+pane	0	2	:vim	1	:*	0	:/home/shane	1	vim	:vim LED-MATRIX/test_server.py
+window	0	1	0	:-	9668,211x58,0,0[211x20,0,0{105x20,0,0,1,105x20,106,0,5},211x37,0,21{104x37,0,21,2,106x37,105,21,3}]
+window	0	2	1	:*	cd63,211x58,0,0,6
+state	0	

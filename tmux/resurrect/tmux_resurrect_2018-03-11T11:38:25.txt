@@ -1,0 +1,14 @@
+pane	0	1	:~/test	0	:-	0	:/home/shane/test	0	zsh	:
+pane	0	1	:~/test	0	:-	1	:/home/shane/test	0	zsh	:
+pane	0	1	:~/test	0	:-	2	:/home/shane/test	1	vim	:vim asyncio_server2.py
+ps -eo ppid command
+sed s/^ *//
+grep ^186
+cut -d  -f2-
+pane	0	1	:~/test	0	:-	3	:/home/shane/test	0	vim	:vim asyncio_client.py
+pane	0	2	:pi@10.0.0.41	0	:	0	:/home/shane/LED-MATRIX	1	ssh	:ssh pi@10.0.0.41
+pane	0	3	:~	1	:*	0	:/home/shane	1	zsh	:
+window	0	1	0	:-	5c4d,211x58,0,0[211x19,0,0{104x19,0,0,1,106x19,105,0,5},211x38,0,20{104x38,0,20,2,106x38,105,20,3}]
+window	0	2	0	:	cd63,211x58,0,0,6
+window	0	3	1	:*	cd66,211x58,0,0,9
+state	0	
