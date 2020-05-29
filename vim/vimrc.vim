@@ -43,6 +43,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd! bufwritepost .vimrc source %
 " Sets how many lines of history VIM has to remember
 set history=500
 
@@ -56,6 +57,7 @@ set autoread
 
 execute pathogen#infect()
 set  number
+set relativenumber
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
@@ -63,7 +65,10 @@ let g:mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
+nmap <leader>t :NERDTree<cr>
 
+" Run Python Script
+:map <F2> :w\|!python3 %<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -87,6 +92,13 @@ set ruler
 
 " Height of the command bar
 set cmdheight=2
+
+" Set ENTER to add empty line below current line
+nmap <Enter> o<Esc>k
+
+
+" set SHIFT-ENTER to add empty line above current line
+nmap O O<Esc>j
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -163,12 +175,17 @@ vnoremap > >gv
 map <Space> /
 map <c-space> ?
 
+" Turn off auto comment on enter
+autocmd FileType * setlocal fo-=c fo-=r fo-=o
 
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+map <C-d> <C-K>
+map <C-u> <C-J>
+
 "
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
