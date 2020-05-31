@@ -36,7 +36,7 @@ Pretty convenient for configuring new servers.
 
 If you do not already have Powerline fonts installed, use
 
-  sudo apt-get install fonts-powerline
+```  sudo apt-get install fonts-powerline```
 
 This package looks best using the [Solarized](https://ethanschoonover.com/solarized/) color theme. Clone the [xfce4 terminal repo](https://github.com/sgerrand/xfce4-terminal-colors-solarized.git), or google for the relevant one.
 
