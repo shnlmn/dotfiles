@@ -1,4 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Maintainer: 
 "       Amir Salihefendic
 "       http://amix.dk - amix@amix.dk
@@ -25,6 +26,7 @@
 " Sections:
 " 	 -> Vundle Script
 "    -> General
+"	 -> Plugin Mappings
 "    -> VIM user interface
 "    -> Colors and Fonts
 "    -> Files and backups
@@ -58,6 +60,14 @@
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
     "Add your bundles here
+	Plugin 'tpope/vim-surround'
+	Plugin 'ctrlpvim/ctrlp.vim'
+	Plugin 'scrooloose/nerdtree'
+	Plugin 'vim-airline/vim-airline'
+	Plugin 'vim-airline/vim-airline-themes'
+	Plugin 'altercation/vim-colors-solarized'
+	Plugin 'tpope/vim-sensible'
+	Plugin 'posva/vim-vue'
     Plugin 'Syntastic' "uber awesome syntax and errors highlighter
     Plugin 'https://github.com/tpope/vim-fugitive' "So awesome, it should be illegal 
     "...All your other bundles...
@@ -84,7 +94,6 @@ set history=500
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
-
 " Enable airline theme plugin... for some reason
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -98,14 +107,48 @@ let g:mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
-nmap <leader>t :NERDTree<cr>
 
 " Run Python Script
 :map <F2> :w\|!python3 %<cr>
 
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin Mappings 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree Settings
+noremap <Leader>n :NERDTreeToggle<CR>
+let NERDTreeChDirMode = 2
+let NERDTreeShowHidden = 1
+
+" Ctrlp.vim Mappings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_switch_buffer = 'et'
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+let g:ctrlp_user_command = 'find %s -type f'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" Airline Theme Setting
+let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1
+let g:tmuxline_powerline_separators = 1
+let g:airline#extensions#tmuxline#enabled = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
@@ -129,9 +172,8 @@ set cmdheight=2
 " Set ENTER to add empty line below current line
 nmap <Enter> o<Esc>k
 
-
 " set SHIFT-ENTER to add empty line above current line
-nmap O O<Esc>j
+nmap <leader>o O<Esc>j
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -144,22 +186,14 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
-
 " Add a bit extra margin to the left
 set foldcolumn=1
-let g:airline_theme="zenburn"
 
-let g:airline_powerline_fonts = 1
-let g:tmuxline_powerline_separators = 1
-let g:airline#extensions#tmuxline#enabled = 1
-
-let g:jedi#usages_command = "<leader>z"
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
-map <Leader>b Oimport ipdb: ipdb.set_trace() # BREAKPOINT<C-c>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Airline themes under =>Plugin Mappings
+
 " Enable syntax highlighting
 syntax enable 
 
@@ -167,11 +201,6 @@ syntax enable
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
-
-try
-    colorscheme railscasts
-catch
-endtry
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -187,7 +216,7 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-
+" 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -195,9 +224,10 @@ set ffs=unix,dos,mac
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
+" 1 tab == 4 space
 set shiftwidth=4
-set tabstop=4
+set expandtab
+set tabstop=4 softtabstop=4
 
 set ai "Auto indent
 set si "Smart indent
