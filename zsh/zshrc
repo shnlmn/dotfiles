@@ -5,7 +5,6 @@
 export WORKON_HOME=$HOME/Envs
 source /usr/local/bin/virtualenvwrapper.sh
 alias mkvirtualenv3="mkvirtualenv --python=$(which python3)"
-
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -19,6 +18,10 @@ alias ls="ls -a"
 export ZSH="/home/shane/dotfiles/zsh/plugins/oh-my-zsh"
 #
 #
+# Fix ZSH PATHS to include 'snap' applications from Ubuntu
+emulate sh -c "source /etc/profile.d/apps-bin-path.sh"
+#
+
 autoload -U compinit
 
 plugins=(
