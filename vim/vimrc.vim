@@ -66,6 +66,7 @@
 	Plugin 'vim-airline/vim-airline'
 	Plugin 'vim-airline/vim-airline-themes'
 	Plugin 'altercation/vim-colors-solarized'
+    Plugin 'Valloric/YouCompleteMe.git'
 	Plugin 'tpope/vim-sensible'
 	Plugin 'posva/vim-vue'
     Plugin 'Syntastic' "uber awesome syntax and errors highlighter
@@ -141,6 +142,7 @@ let g:ctrlp_user_command = 'find %s -type f'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Airline Theme Setting
+let g:airline_theme = 'solarized'
 let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
 let g:tmuxline_powerline_separators = 1
@@ -216,7 +218,8 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-" 
+" Set Color Scheme
+colorscheme solarized
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -224,10 +227,10 @@ set ffs=unix,dos,mac
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 space
-set shiftwidth=4
+" 1 tab == 2 space
+set shiftwidth=2
 set expandtab
-set tabstop=4 softtabstop=4
+set tabstop=2 softtabstop=2 
 
 set ai "Auto indent
 set si "Smart indent
