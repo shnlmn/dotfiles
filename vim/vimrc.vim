@@ -64,13 +64,16 @@
 	Plugin 'ctrlpvim/ctrlp.vim'
 	Plugin 'scrooloose/nerdtree'
 	Plugin 'vim-airline/vim-airline'
+  Plugin 'tpope/vim-commentary'
 	Plugin 'vim-airline/vim-airline-themes'
+  Plugin 'morhetz/gruvbox'
 	Plugin 'altercation/vim-colors-solarized'
-    Plugin 'Valloric/YouCompleteMe.git'
+  Plugin 'Valloric/YouCompleteMe.git'
 	Plugin 'tpope/vim-sensible'
 	Plugin 'posva/vim-vue'
-    Plugin 'Syntastic' "uber awesome syntax and errors highlighter
-    Plugin 'https://github.com/tpope/vim-fugitive' "So awesome, it should be illegal 
+  Plugin 'lifepillar/vim-solarized8'
+  Plugin 'Syntastic' "uber awesome syntax and errors highlighter
+  Plugin 'https://github.com/tpope/vim-fugitive' "So awesome, it should be illegal 
     "...All your other bundles...
     if iCanHazVundle == 0
         echo "Installing Vundles, please ignore key map error messages"
@@ -121,6 +124,8 @@ set incsearch
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin Mappings 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Commentayr Mappings
+map <C-_> gcc
 " NERDTree Settings
 noremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeChDirMode = 2
@@ -142,8 +147,7 @@ let g:ctrlp_user_command = 'find %s -type f'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Airline Theme Setting
-let g:airline_theme = 'solarized'
-let g:airline_solarized_bg='dark'
+let g:airline_theme = 'gruvbox'
 let g:airline_powerline_fonts = 1
 let g:tmuxline_powerline_separators = 1
 let g:airline#extensions#tmuxline#enabled = 1
@@ -175,6 +179,7 @@ set cmdheight=2
 nmap <Enter> o<Esc>k
 
 " set SHIFT-ENTER to add empty line above current line
+
 nmap <leader>o O<Esc>j
 
 " Configure backspace so it acts as it should act
@@ -194,6 +199,7 @@ set foldcolumn=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:set background=dark
 " Airline themes under =>Plugin Mappings
 
 " Enable syntax highlighting
@@ -219,7 +225,8 @@ set encoding=utf8
 set ffs=unix,dos,mac
 
 " Set Color Scheme
-colorscheme solarized
+" set termguicolors
+colorscheme gruvbox 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -250,6 +257,7 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 map <C-d> <C-K>
+
 map <C-u> <C-J>
 
 "
