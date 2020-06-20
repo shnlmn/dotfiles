@@ -45,47 +45,46 @@
 " => Vundle Script 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Setting up Vundle - the vim plugin bundler
-    let iCanHazVundle=1
-    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-    if !filereadable(vundle_readme) 
-        echo "Installing Vundle.."
-        echo ""
-        silent !mkdir -p ~/.vim/bundle
-        silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
-        let iCanHazVundle=0
-    endif
-    set nocompatible              " be iMproved, required
-    filetype off                  " required
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#begin()
-    Plugin 'VundleVim/Vundle.vim'
-    "Add your bundles here
-	Plugin 'tpope/vim-surround'
-	Plugin 'ctrlpvim/ctrlp.vim'
-	Plugin 'scrooloose/nerdtree'
-	Plugin 'vim-airline/vim-airline'
-  Plugin 'tpope/vim-commentary'
-	Plugin 'vim-airline/vim-airline-themes'
-  Plugin 'morhetz/gruvbox'
-	Plugin 'altercation/vim-colors-solarized'
-  Plugin 'Valloric/YouCompleteMe.git'
-	Plugin 'tpope/vim-sensible'
-	Plugin 'posva/vim-vue'
-  Plugin 'lifepillar/vim-solarized8'
-  Plugin 'Syntastic' "uber awesome syntax and errors highlighter
-  Plugin 'https://github.com/tpope/vim-fugitive' "So awesome, it should be illegal 
-    "...All your other bundles...
-    if iCanHazVundle == 0
-        echo "Installing Vundles, please ignore key map error messages"
-        echo ""
-        :PluginInstall
-    endif
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme) 
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
+    let iCanHazVundle=0
+endif
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+"Add your bundles here
+Plugin 'tpope/vim-surround'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-commentary'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'morhetz/gruvbox'
+Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'Valloric/YouCompleteMe.git'
+Plugin 'posva/vim-vue'
+Plugin 'lifepillar/vim-solarized8'
+Plugin 'Syntastic' "uber awesome syntax and errors highlighter
+Plugin 'https://github.com/tpope/vim-fugitive' "So awesome, it should be illegal 
+"...All your other bundles...
+if iCanHazVundle == 0
+    echo "Installing Vundles, please ignore key map error messages"
+    echo ""
+    :PluginInstall
+endif
 
-    call vundle#end() 
-    "must be last
-    filetype plugin indent on " load filetype plugins/indent settings
-    syntax on                      " enable syntax
- 
+call vundle#end() 
+"must be last
+filetype plugin indent on " load filetype plugins/indent settings
+syntax on                      " enable syntax
+
 " Setting up Vundle - the vim plugin bundler end
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -95,9 +94,9 @@ autocmd! bufwritepost .vimrc source %
 " Sets how many lines of history VIM has to remember
 set history=500
 
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
+" Enable filetype plugins (currently set in vundle block)
+" filetype plugin on
+" filetype indent on
 " Enable airline theme plugin... for some reason
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -139,10 +138,10 @@ let g:ctrlp_switch_buffer = 'et'
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+            \ 'file': '\v\.(exe|so|dll)$',
+            \ 'link': 'some_bad_symbolic_links',
+            \ }
 let g:ctrlp_user_command = 'find %s -type f'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
@@ -232,12 +231,12 @@ colorscheme gruvbox
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Be smart when using tabs ;)
-set smarttab
+" set smarttab
 
-" 1 tab == 2 space
-set shiftwidth=2
+" 1 tab == 4 space
+set shiftwidth=4   
 set expandtab
-set tabstop=2 softtabstop=2 
+" set tabstop=4 softtabstop=4
 
 set ai "Auto indent
 set si "Smart indent
@@ -256,10 +255,8 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-map <C-d> <C-K>
-
-map <C-u> <C-J>
-
+map <s-K> <C-u>
+map <s-J> <C-d>
 "
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
