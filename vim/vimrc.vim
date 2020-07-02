@@ -63,10 +63,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-commentary'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'morhetz/gruvbox'
+" Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'morhetz/gruvbox'
+Plugin 'lifepillar/vim-gruvbox8'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'posva/vim-vue'
@@ -145,11 +146,6 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_user_command = 'find %s -type f'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-" Airline Theme Setting
-let g:airline_theme = 'gruvbox'
-let g:airline_powerline_fonts = 1
-let g:tmuxline_powerline_separators = 1
-let g:airline#extensions#tmuxline#enabled = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -225,7 +221,7 @@ set ffs=unix,dos,mac
 
 " Set Color Scheme
 " set termguicolors
-colorscheme gruvbox 
+colorscheme gruvbox8
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related

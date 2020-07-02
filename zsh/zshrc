@@ -134,3 +134,8 @@ ENABLE_CORRECTION="true"
  export PATH="$PYENV_ROOT/bin:$PATH"
  eval "$(pyenv init -)"
  eval "$(pyenv virtualenv-init -)"
+
+ if [ "$TERM" = "xterm" ]; then
+     export TERM=xterm-256color
+ fi
+ alias tmux='tmux -2'  #FOR 256color
