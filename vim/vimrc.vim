@@ -105,8 +105,8 @@ set  number
 set relativenumber
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = " "
+let g:mapleader = " "
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -178,7 +178,6 @@ set cmdheight=2
 nmap <Enter> o<Esc>k
 
 " set SHIFT-ENTER to add empty line above current line
-
 nmap <leader>o O<Esc>j
 
 " Configure backspace so it acts as it should act
@@ -236,7 +235,7 @@ colorscheme gruvbox
 " 1 tab == 4 space
 set shiftwidth=4   
 set expandtab
-" set tabstop=4 softtabstop=4
+set tabstop=4 softtabstop=4
 
 set ai "Auto indent
 set si "Smart indent
@@ -244,8 +243,8 @@ set wrap "Wrap lines
 vnoremap < <gv 
 vnoremap > >gv
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <Space> /
-map <c-space> ?
+" map <Space> /
+" map <c-space> ?
 
 " Turn off auto comment on enter
 autocmd FileType * setlocal fo-=c fo-=r fo-=o
@@ -276,4 +275,3 @@ au TabLeave * let g:lasttab = tabpagenr()
 """"""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
-
