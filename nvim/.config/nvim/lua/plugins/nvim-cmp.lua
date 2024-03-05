@@ -69,6 +69,8 @@ return {
         return 'make install_jsregexp'
       end)(),
     },
+    'hrsh7th/cmp-emoji',
+    opts = nil,
     'saadparwaiz1/cmp_luasnip',
 
     -- Adds LSP completion capabilities

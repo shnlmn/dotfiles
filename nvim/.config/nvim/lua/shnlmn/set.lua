@@ -42,3 +42,6 @@ vim.o.termguicolors = true
 
 -- No swapfiles
 vim.o.swapfile = false
+
+-- No Wrap
+vim.wo.wrap = false

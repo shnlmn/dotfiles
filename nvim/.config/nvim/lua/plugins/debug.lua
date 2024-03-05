@@ -43,7 +43,6 @@ return {
         'prettier',
         'eslint-lsp',
         'typescript-language-server',
-        'delve',
       },
     }
 

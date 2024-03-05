@@ -1,9 +1,8 @@
--- Set <space> as the leader 
+-- Set  <space> as the leader
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
 -- load my remaps and sets
 require("shnlmn")
 -- [[ Install `lazy.nvim` plugin manager ]]
@@ -31,6 +30,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup("plugins")
 
 -- [[ Highlight on yank ]]
+--
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -39,4 +39,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
   group = highlight_group,
   pattern = '*',
+})
+
+vim.api.nvim_create_augroup("WorkingDirectory", { clear = true })
+vim.api.nvim_create_autocmd("VimEnter", {
+  print("VimEnter"),
+  pattern = "*",
+  callback = function()
+    local path = "cd %:h"
+    vim.api.nvim_command(path)
+    print(vim.fs.dirname(vim.fn.expand("%:p")))
+  end,
+  group = "WorkingDirectory",
 })
