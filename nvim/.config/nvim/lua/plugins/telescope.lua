@@ -2,6 +2,9 @@ config = function()
   -- [[ Configure Telescope ]]
   -- See `:help telescope` and `:help telescope.setup()`
   require('telescope').setup {
+    pickers = {
+      find_files = { hidden = true }
+    },
     defaults = {
       mappings = {
         i = {
