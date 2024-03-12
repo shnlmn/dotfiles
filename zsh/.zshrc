@@ -115,3 +115,4 @@ export NVM_DIR="$HOME/.nvm"
 
 mkdir -p ${ZDOTDIR:-~}/.zsh_functions
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+export PATH="$HOME/bin/neovim/build/bin:$PATH"

@@ -13,14 +13,6 @@ vim.keymap.set('n', '<leader>bn', vim.cmd.bnext)
 vim.keymap.set('n', '<leader>bp', vim.cmd.bprevious)
 vim.keymap.set('n', '<leader>bl', vim.cmd.buffers)
 
--- Shift lines
-vim.keymap.set('n', '<A-j>', ":m +1<CR>==")
-vim.keymap.set('n', '<A-k>', ":m -2<CR>==")
-vim.keymap.set('i', '<A-j>', "<Esc>:m +1<CR>==gi")
-vim.keymap.set('i', '<A-k>', "<Esc>:m -2<CR>==gi")
-vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv")
-
 vim.keymap.set('n', '<leader>fs', vim.cmd.NERDTree, { desc = 'Open File browser' })
 
 -- Diagnostic keymaps
@@ -32,3 +24,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Naviation
 vim.keymap.set('n', '<C-d>', "<C-d>zz", { desc = "Jump 1/2 page down and center" })
 vim.keymap.set('n', '<C-u>', "<C-u>zz", { desc = "Jump 1/2 page up and center" })
+
+-- Format Document
+vim.keymap.set('n', '<leader>ff', ":Format<CR>", { desc = 'Format Document' })
+--

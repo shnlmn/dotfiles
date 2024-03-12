@@ -43,12 +43,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.api.nvim_create_augroup("WorkingDirectory", { clear = true })
 vim.api.nvim_create_autocmd("VimEnter", {
-  print("VimEnter"),
+  print("Make current directory the working directory"),
   pattern = "*",
   callback = function()
-    local path = "cd %:h"
-    vim.api.nvim_command(path)
-    print(vim.fs.dirname(vim.fn.expand("%:p")))
+    if vim.fn.expand("%:t") == "" then
+      vim.cmd([[cd %:p:h]])
+      print("Changed to directory: " .. vim.fn.expand("%:p:h"))
+    else
+      print("No file opened. Working Directory is " .. vim.fn.getcwd())
+    end
   end,
   group = "WorkingDirectory",
 })
