@@ -27,4 +27,13 @@ vim.keymap.set('n', '<C-u>', "<C-u>zz", { desc = "Jump 1/2 page up and center" }
 
 -- Format Document
 vim.keymap.set('n', '<leader>ff', ":Format<CR>", { desc = 'Format Document' })
---
+
+-- Cure for dyslexia, move a character left or right
+vim.keymap.set('n', "<C-l>", "\"zx\"zp", { desc = "Move character under cursor to the right" })
+vim.keymap.set('n', "<C-h>", "\"zxh\"zP", { desc = "Move character under cursor to the right" })
+
+-- Remap to paste from _ register
+vim.keymap.set('x', '<leader>p', [["_dP]], { desc = "Paste from _ register" })
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
+vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy to system clipboard" })
+vim.keymap.set({"n", "v"}, "<leader>d", [["_d]], { desc = "Delete to blackhole register" })
