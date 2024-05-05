@@ -101,9 +101,12 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh
 alias vim="nvim"
 alias vi="nvim"
+alias edm="cd ~/Projects/Edmonds-Pegwall/games && vim ."
+alias vimconfig="cd ~/dotfiles/nvim/.config/nvim && vim ."
 # alias tmux="tmux -2"
 export OPENCV_INCLUDE_DIR=/usr/local/include/opencv4
 export CPLUS_INCLUDE_PATH=/usr/local/include/opencv4:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export NVM_DIR="$HOME/.nvm"
