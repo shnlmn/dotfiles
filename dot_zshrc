@@ -101,8 +101,8 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh
 alias vim="nvim"
 alias vi="nvim"
-alias edm="cd ~/Projects/Edmonds-Pegwall/games && vim ."
-alias vimconfig="cd ~/dotfiles/nvim/.config/nvim && vim ."
+alias edm="cd /mnt/storage/Projects/Edmonds-Pegwall/games && vim ."
+alias vimconfig="cd ~/.local/share/chezmoi/dot_config/nvim && vim ."
 # alias tmux="tmux -2"
 export OPENCV_INCLUDE_DIR=/usr/local/include/opencv4
 export CPLUS_INCLUDE_PATH=/usr/local/include/opencv4:$CPLUS_INCLUDE_PATH
@@ -114,9 +114,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-. "$HOME/.cargo/env"
 
 mkdir -p ${ZDOTDIR:-~}/.zsh_functions
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+
 export PATH="$HOME/bin/neovim/build/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"

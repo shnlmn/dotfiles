@@ -11,11 +11,11 @@ config = function()
     local nmap = function(keys, func, desc)
       if desc then
         desc = 'LSP: ' .. desc
+        vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
       end
 
     _.server_capabilities.signatureHelpProvider = false
 
-      vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
     end
 
     nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
