@@ -21,7 +21,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- [[ Configure plugins ]]
+
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
 --
@@ -55,3 +55,4 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
   group = "WorkingDirectory",
 })
+
