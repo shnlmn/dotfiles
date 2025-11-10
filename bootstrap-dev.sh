@@ -81,6 +81,28 @@ else
   echo "      chezmoi init --apply https://github.com/shnlmn/dotfiles.git"
 fi
 
+# --------------------------------------------------------------------
+# Ensure local and pip bin dirs are on PATH early
+# --------------------------------------------------------------------
+mkdir -p "$HOME/.local/bin"
+PIP_BIN="$(python3 -m site --user-base)/bin"
+
+for rc in "$HOME/.bashrc" "$HOME/.zshrc"; do
+  grep -qx 'export PATH="$HOME/.local/bin:$PATH"' "$rc" 2>/dev/null || \
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$rc"
+  grep -qx "export PATH=\"$PIP_BIN:\$PATH\"" "$rc" 2>/dev/null || \
+    echo "export PATH=\"$PIP_BIN:\$PATH\"" >> "$rc"
+done
+
+export PATH="$HOME/.local/bin:$PIP_BIN:$PATH"
+
+# --------------------------------------------------------------------
+# Install PlatformIO
+# --------------------------------------------------------------------
+echo "[*] Installing PlatformIO..."
+curl -fsSL -o get-platformio.py https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py
+python3 get-platformio.py
+
 echo
 echo "[✓] Done."
 echo "    Neovim nightly: $(command -v nvim || echo 'nvim not on PATH in this shell')"
