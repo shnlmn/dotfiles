@@ -121,3 +121,5 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 export PATH="$HOME/bin/neovim/build/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(dircolors -b ~/.dircolors)"
+export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
