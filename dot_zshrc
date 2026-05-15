@@ -119,6 +119,8 @@ mkdir -p ${ZDOTDIR:-~}/.zsh_functions
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 export PATH="$HOME/bin/neovim/build/bin:$PATH"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/share/pi-node/node-v22.22.3-linux-x64/bin:$PATH"
